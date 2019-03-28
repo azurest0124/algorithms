@@ -7,16 +7,8 @@ package azure.sort;
  *
  */
 public class MergeSort {
-	public static void main(String[] args) {
-
-		int[] arr = {1,6,3,12,5,9,2,1};
-		mergeSort(arr);
-		for(int i = 0;i<arr.length;i++) {
-			System.out.print(arr[i] + " ");
-		}
-	}
 	
-	private static void mergeSort(int [] arr) {
+	public void mergeSort(int [] arr) {
 		int length = arr.length; 
 		if(length == 1) return; 
 		int mid = length/2;
@@ -26,12 +18,10 @@ public class MergeSort {
 		
 		mergeSort(leftArr);
 		mergeSort(rightArr);
-		
 		merge(arr, leftArr, rightArr); 
-		
 	}
 	
-	private static int[] merge(int[]arr, int[] leftArr, int[]rightArr) {
+	private int[] merge(int[]arr, int[] leftArr, int[]rightArr) {
 		int leftSize = leftArr.length;
 		int rightSize = rightArr.length; 
 		int i=0 , j = 0, x = 0;
@@ -55,12 +45,19 @@ public class MergeSort {
 		return arr; 
 	}
 	
-	private static int[] makeArr(int[]arr, int startIdx, int endIdx) {
+	private int[] makeArr(int[]arr, int startIdx, int endIdx) {
 		int length = endIdx - startIdx + 1; 
 		int[] newArr = new int[length]; 
 		for(int i = 0;i<length;i++) {
 			newArr[i] = arr[startIdx+i];
 		}
 		return newArr; 
+	}
+	
+	public void printArr(int[] arr) {
+		for(int i = 0;i<arr.length;i++) {
+			System.out.print(arr[i] + " ");
+		}
+		System.out.println();
 	}
 }
