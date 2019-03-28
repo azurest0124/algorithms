@@ -10,5 +10,6 @@ public class BSTTest {
 		BST bst = new BST(); 
 		Node rootNode = bst.makeTree(arr);
 		bst.searchNode(rootNode, 14); 
+		
 	}
 }
